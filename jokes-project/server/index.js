@@ -1,4 +1,5 @@
 import express from "express";
+import jokes from "./jokes.js";
 
 const app = express();
 const port = 3001;

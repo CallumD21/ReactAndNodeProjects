@@ -1,0 +1,15 @@
+{
+  "name": "jokes-project",
+  "version": "1.0.0",
+  "description": "My first project of building a Node JS backend and a React JS front end.\r The data is a Jokes array taken from the app brewery web development course that I have completed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

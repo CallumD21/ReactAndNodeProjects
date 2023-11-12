@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import JokeRow from "./JokeRow";
 
 function App() {
     const [joke, setJoke] = useState(null);
@@ -11,7 +12,18 @@ function App() {
     return (
         <div>
             <h1>Jokes Project</h1>
-            <p>{!joke ? "Loading..." : joke.jokeText}</p>
+            <p>Random joke: {!joke ? "Loading..." : joke.jokeText}</p>
+            <p>All Jokes</p>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Type</th>
+                    <th>Text</th>
+                </tr>
+                <JokeRow />
+                <JokeRow />
+                <JokeRow />
+            </table>
         </div>
     )
 }

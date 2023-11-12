@@ -1,11 +1,11 @@
 import React from "react";
 
-function JokeRow() {
+function JokeRow(props) {
     return (
         <tr>
-            <td>1</td>
-            <td>Example Type</td>
-            <td>Example Text</td>
+            <td>{props.joke.id}</td>
+            <td>{props.joke.jokeType}</td>
+            <td>{props.joke.jokeText}</td>
         </tr>
     );
 }

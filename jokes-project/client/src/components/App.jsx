@@ -15,13 +15,25 @@ function App() {
             .then((data) => setJoke(data));
     }, []);
 
+    //Keep track of the page index
+    const [pageIndex, setPageIndex] = useState(1);
+
+    function NextPage() {
+        setPageIndex(pageIndex + 1);
+    }
+
+    function PreviousPage() {
+        setPageIndex(pageIndex - 1);
+    }
+
     //Get a page of jokes
     const [jokePage, setJokePage] = useState([]);
     useEffect(() => {
-        fetch("/joke/all?page=1")
+        fetch(`/joke/all?page=${pageIndex}`)
             .then((res) => res.json())
             .then((data) => setJokePage(data));
-    }, []);
+    }, [pageIndex]);
+
 
     return (
         <div>
@@ -40,6 +52,9 @@ function App() {
                     {jokePage && jokePage.map(CreateJokeRow)}
                 </tbody>
             </table>
+            <p>Current Page: {pageIndex}</p>
+            <button onClick={PreviousPage} disabled={pageIndex === 1}>Previous Page</button>
+            <button onClick={NextPage} disabled={pageIndex === 10}>Next Page</button>
         </div>
     )
 }
